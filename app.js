@@ -32,7 +32,8 @@ const server = http.createServer((request, response) => {
         })
     }
     else if(request.url ==='/getdata'){
-        let timestamp = Date.now();
+        let now = Date.now();
+        let timestamp = new Date(now).toISOString();
         let user = os.userInfo().username;
 
         let data = {
